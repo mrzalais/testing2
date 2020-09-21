@@ -4,8 +4,7 @@ declare(strict_types=1);
 
 namespace App\Spices;
 
-use app\Spice;
-
+use App\Spice;
 
 class Garlic extends Spice
 {
