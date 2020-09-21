@@ -2,19 +2,20 @@
 
 declare(strict_types=1);
 
-require_once './app/Spices/Spices.php';
-require_once './app/Spices/Clove.php';
-require_once './app/Spices/BlackPepper.php';
-require_once './app/Spices/Garlic.php';
+require_once './requireMe.php';
 
+use App\SpicesCollection;
+use App\Spices\Clove;
+use App\Spices\Garlic;
+use App\Spices\BlackPepper;
 
-use app\Spice;
+$spices = new SpicesCollection();
 
-$pepper = new \app\Spice\BlackPepper('Spicy');
-var_dump($pepper);
+$spices->addSpice(new BlackPepper('Spicy', 'Black Pepper'));
+$spices->addSpice(new Clove('Sweet', 'Clove'));
+$spices->addSpice(new Garlic('Spicy', 'Garlic'));
 
-$clove = new \app\Spice\Clove('Sweet');
-var_dump($clove);
-
-$garlic = new \app\Spice\Garlic('Spicy');
-var_dump($garlic);
+foreach ($spices->allSpices() as $spice)
+{
+    echo $spice->getName() . PHP_EOL;
+}
