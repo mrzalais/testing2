@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-function giveRandom()
+function giveRandom():int
 {
     return rand(1,1000);
 }
